@@ -1,0 +1,36 @@
+.title {
+    /* background-color: green; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 0;
+    /* margin-top: 50px */
+}
+
+.search {
+    background-color: beige;
+    height: 30px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+    border-bottom: 1px solid black;
+}
+
+.card-list {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    justify-content: center;
+}
+
+.movie-card {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    background-color: green;
+    height: 721px;
+    width: 300px;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    /* box-shadow: 5px 5px 10px; */
+}
