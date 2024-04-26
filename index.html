@@ -1,52 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="./style.css">
-</head>
-<body>
-    <script src="./movie.js"></script>
-
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
     <header class="title">
-        <h1 >내배캠 최고 평점 영화 콜렉션</h1>
+      <h1>내배캠 최고 평점 영화 콜렉션</h1>
     </header>
 
     <form class="search">
-        <label >영화 검색 :</label>
-        <input type="text" placeholder="영화 제목을 검색해 보세요.">
-        <button type="submit">검색</button>
-    </form> 
+      <label>영화 검색 :</label>
+      <input type="text" placeholder="영화 제목을 검색해 보세요." />
+      <button>검색</button>
+    </form>
 
-    <main class="card-list">
-        <div class="movie-card">
-            <img src="" alt="영화 이미지">
-            <h3>영화제목</h3>
-            <p>영화 줄거리</p>
-            <p>Rating:</p>
-        </div>
-        <div class="movie-card">
-            <img src="" alt="영화 이미지">
-            <h3>영화제목</h3>
-            <p>영화 줄거리</p>
-            <p>Rating:</p>
-        </div>
-        <div class="movie-card">
-            <img src="" alt="영화 이미지">
-            <h3>영화제목</h3>
-            <p>영화 줄거리</p>
-            <p>Rating:</p>
-        </div>
-        <div class="movie-card">
-            <img src="" alt="영화 이미지">
-            <h3>영화제목</h3>
-            <p>영화 줄거리</p>
-            <p>Rating:</p>
-        </div>
-       
-
-    </main>
-    
-</body>
+    <div class="card-list" onclick="id()">
+      <!-- <div onclick="movieID()" class="movie-card">
+        <img src="" alt="">
+        <h1>cardTitle</h1>
+        <p>cardOverview</p>
+        <p>cardVoteAverage</p> -->
+    </div>
+    <script src="./movie.js"></script>
+  </body>
 </html>
