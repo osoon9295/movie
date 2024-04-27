@@ -15,43 +15,50 @@ fetch(
 )
   .then((response) => response.json())
   .then((response) => {
-    const movieList = response["results"];
+    const movies = response["results"];
+    const idButton = response["results"];
 
-    movieList.forEach((a) => {
+    movies.forEach((a) => {
       const img = a["poster_path"]; // 포스터
       const title = a["title"];
       const overview = a["overview"]; // 요약 내용
       const voteAverage = a["vote_average"]; // 평점
-      const id = a["id"]; // id
+      const id = a["id"];
 
       const card = document.createElement("div");
       card.classList.add("card");
 
       const cardImage = document.createElement("img");
+      cardImage.src = `https://image.tmdb.org/t/p/w200/${img}`;
 
       const cardTitle = document.createElement("h1");
-      card.classList.add("cardTitle");
+      cardTitle.textContent = title;
+      // card.classList.add("cardTitle");
 
       const cardOverview = document.createElement("p");
-      card.classList.add("cardOverview");
+      cardOverview.textContent = overview;
+      // card.classList.add("cardOverview");
 
       const cardVoteAverage = document.createElement("p");
-      card.classList.add("cardVoteAverage");
-
-      cardImage.src = `https://image.tmdb.org/t/p/w200/${img}`;
-      cardTitle.textContent = title;
-      cardOverview.textContent = overview;
       cardVoteAverage.textContent = voteAverage;
+      // card.classList.add("cardVoteAverage");
 
       card.append(cardImage, cardTitle, cardOverview, cardVoteAverage);
       cardList.append(card);
 
-      window.alert(`${id}`);
+      card.addEventListener("click", () => {
+        alert(`영화 ID: ${id}`);
+      });
     });
   })
+
   .catch((err) => console.error(err));
 
-// let id = document.querySelector(".card-List");
-// id.addEventListener("click", function (event) {
-//   alert(event.target.id);
-// });
+// idButton.forEach((b) => {
+//   const id = b["id"];
+
+// const print = () => {
+//   alert(`영화id :` + id);
+// };
+
+// document.getElementById("button").addEventListener("click", print);
