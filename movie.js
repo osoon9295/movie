@@ -16,17 +16,21 @@ fetch(
   .then((response) => response.json())
   .then((response) => {
     const movies = response["results"];
-    const idButton = response["results"];
 
+    cardList.innerHTML = "";
     movies.forEach((a) => {
       const img = a["poster_path"]; // 포스터
-      const title = a["title"];
+      const title = a["title"]; // 제목
       const overview = a["overview"]; // 요약 내용
       const voteAverage = a["vote_average"]; // 평점
-      const id = a["id"];
+
+      const id = a["id"]; // id
 
       const card = document.createElement("div");
       card.classList.add("card");
+      card.addEventListener("click", () => {
+        alert(`영화 ID: ${id}`);
+      });
 
       const cardImage = document.createElement("img");
       cardImage.src = `https://image.tmdb.org/t/p/w200/${img}`;
@@ -46,19 +50,26 @@ fetch(
       card.append(cardImage, cardTitle, cardOverview, cardVoteAverage);
       cardList.append(card);
 
-      card.addEventListener("click", () => {
-        alert(`영화 ID: ${id}`);
+      const searchInput = document.getElementById("search"); // id search에 입력한 text를 const searchInput에 담는다.
+      const searchButton = document.getElementById("button"); //
+      searchButton.addEventListener("click", () => {
+        const inputText = searchInput.value.toLowerCase();
+        // console.log(inputText);
+
+        if (title.toLowerCase().includes(inputText)) {
+          cardList.innerHTML = "";
+
+          //  console.log("!!!");
+        }
       });
+
+      // const showSearchResult = (event) => {
+      //   event.preventDefault();
+
+      //   let searchWord = searchInput.value;
+      //   console.log(showSearchResult);
+      // };
     });
   })
 
   .catch((err) => console.error(err));
-
-// idButton.forEach((b) => {
-//   const id = b["id"];
-
-// const print = () => {
-//   alert(`영화id :` + id);
-// };
-
-// document.getElementById("button").addEventListener("click", print);

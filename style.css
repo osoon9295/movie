@@ -1,39 +1,90 @@
+@font-face {
+  font-family: "WavvePADO-Regular";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/2404@1.0/WavvePADO-Regular.woff2")
+    format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Pretendard-Regular";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+    format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
 .title {
-  /* background-color: green; */
+  color: #153448;
+  background-color: #dfd0b8;
+  font-family: "WavvePADO-Regular";
+  font-size: 25px;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 30px 0;
-  /* margin-top: 50px */
+  padding: 0px;
+  margin: 50px 0%;
+  height: 30px;
 }
 
-.search {
-  background-color: beige;
-  height: 30px;
-  width: 100%;
+.movie-search {
+  height: 20px;
+  width: 500px;
   display: flex;
   justify-content: center;
+  align-items: center;
   padding: 20px 0;
-  border-bottom: 1px solid black;
+  margin: auto;
+  border-radius: 5px;
+  border: 3px dashed #153448;
 }
 
 .card-list {
+  width: 1000px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   justify-content: center;
 }
 
 .card {
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-  background-color: green;
-  height: 721px;
-  width: 300px;
+  background-color: #dfd0b8;
+  font-family: "Pretendard-Regular";
+  border: 3px solid #153448;
+  /* box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); */
+  height: 700px;
+  width: 250px;
   margin: 20px;
   padding: 20px;
-  border-radius: 10px;
+  border-radius: 5px;
   cursor: pointer;
   /* box-shadow: 5px 5px 10px; */
 }
+.card > h1 {
+  font-size: 25px;
+  margin-top: 20px;
+}
+
+.card > p {
+  font-size: 15px;
+  margin-top: 0%;
+}
+
 .card-image {
   width: auto;
+}
+
+input {
+  width: 200px;
+  margin: 10px;
+}
+button {
+  margin: 0%;
+}
+
+label {
+  margin: 0%;
+}
+
+div {
+  margin: auto;
 }
