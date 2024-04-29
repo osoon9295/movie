@@ -15,9 +15,10 @@ fetch(
 )
   .then((response) => response.json())
   .then((response) => {
-    const movies = response["results"];
+    let movies = response.results;
 
     cardList.innerHTML = "";
+
     movies.forEach((a) => {
       const img = a["poster_path"]; // 포스터
       const title = a["title"]; // 제목
@@ -37,39 +38,27 @@ fetch(
 
       const cardTitle = document.createElement("h1");
       cardTitle.textContent = title;
-      // card.classList.add("cardTitle");
 
       const cardOverview = document.createElement("p");
       cardOverview.textContent = overview;
-      // card.classList.add("cardOverview");
 
       const cardVoteAverage = document.createElement("p");
       cardVoteAverage.textContent = voteAverage;
-      // card.classList.add("cardVoteAverage");
 
       card.append(cardImage, cardTitle, cardOverview, cardVoteAverage);
       cardList.append(card);
-
-      const searchInput = document.getElementById("search"); // id search에 입력한 text를 const searchInput에 담는다.
-      const searchButton = document.getElementById("button"); //
-      searchButton.addEventListener("click", () => {
-        const inputText = searchInput.value.toLowerCase();
-        // console.log(inputText);
-
-        if (title.toLowerCase().includes(inputText)) {
-          cardList.innerHTML = "";
-
-          //  console.log("!!!");
-        }
-      });
-
-      // const showSearchResult = (event) => {
-      //   event.preventDefault();
-
-      //   let searchWord = searchInput.value;
-      //   console.log(showSearchResult);
-      // };
     });
+
+    const searchInput = document.getElementById("search"); // id search에 입력한 text를 const searchInput에 담는다.
+    const searchButton = document.getElementById("button"); //
+
+    searchButton.addEventListener("click", () => {
+      const inputText = searchInput.value.toLowerCase();
+    });
+
+    function searchFunction(val = "") {
+      movies = response.results.filter((value) => value.title.includes(val));
+    }
   })
 
   .catch((err) => console.error(err));
