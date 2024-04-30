@@ -16,13 +16,12 @@
   color: #153448;
   background-color: #dfd0b8;
   font-family: "WavvePADO-Regular";
-  font-size: 25px;
+  font-size: 45px;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0px;
   margin: 50px 0%;
-  height: 30px;
+  height: 25px;
 }
 
 .movie-search {
@@ -34,7 +33,7 @@
   padding: 20px 0;
   margin: auto;
   border-radius: 5px;
-  border: 3px dashed #153448;
+  border: 2px dashed #153448;
 }
 
 .card-list {
@@ -46,7 +45,7 @@
   background-color: #dfd0b8;
   font-family: "Pretendard-Regular";
   border: 3px solid #153448;
-  /* box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); */
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.16), 0 1px 1px rgba(0, 0, 0, 0.23);
   height: 600px;
   width: 250px;
   margin: 20px;
